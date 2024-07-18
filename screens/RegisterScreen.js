@@ -70,8 +70,11 @@ const RegisterScreen = () => {
           />
         </View>
 
-              <Pressable
-                  onPress={() => navigation.navigate("Plan",{email:input,password:password})}
+        <Pressable
+          disabled={!input && !password}
+          onPress={() =>
+            navigation.navigate("Plan", { email: input, password: password })
+          }
           style={
             password.length > 4
               ? {
